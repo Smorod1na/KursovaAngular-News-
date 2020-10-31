@@ -1,0 +1,15 @@
+.marginBottom{
+    margin-bottom: 20px;
+}
+.textCenter{
+    display: flex;
+ justify-content: center;
+}
+.myContainer{
+    padding-right: 150px;
+    padding-left: 150px;
+}
+h2{
+    text-align: center;
+    text-transform: uppercase;
+}

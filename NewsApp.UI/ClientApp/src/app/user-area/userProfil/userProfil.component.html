@@ -1,0 +1,96 @@
+<div class="card card-primary card-outline">
+  <div class="card-body box-profile">
+    <div class="text-center">
+      <img class="profile-user-img img-fluid img-circle" src="{{userModel.image}}" alt="User profile picture">
+    </div>
+
+    <h3 class="profile-username text-center">{{Name}}</h3>
+
+    <h5 class="profile-username text-center">{{userModel.address}}</h5>
+
+
+    <a class="btn btn-primary btn-block marginButton text-white"
+    [routerLink]="['/user-panel/edit']"><b>Edit profil</b></a>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" (click)="showNews()" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              News
+            </button>
+          </h2>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div *ngIf="boolNews==true" class="card-body">
+            <div *ngFor="let item of newsModel">
+            <a class="text-primary" [routerLink]="['/user-panel',(item.title)]">{{item.title}}</a>
+<div class="line"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left "  (click)="showCategorie()" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Categori
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div *ngIf="boolCategorie==true" class="card-body">
+            <div *ngFor="let item of categoriModel">
+              <a class="text-primary" [routerLink]="['/user-panel',(item.name)]">{{item.name}}</a>
+  <div class="line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left " (click)="showAuthors()" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+             Author
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div  *ngIf="boolAuthor==true" class="card-body">
+            <div *ngFor="let item of allManager">
+              <a class="text-primary" [routerLink]="['/user-panel',(item.fullName)]">{{item.fullName}}</a>
+  <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left " (click)="showFavorite()" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+             Favorite
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div  *ngIf="boolFavorite==true" class="card-body">fav
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+    
+  
+  </div>
+  <!-- /.card-body -->
+</div>

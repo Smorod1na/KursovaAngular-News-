@@ -1,0 +1,10 @@
+.myContainer{
+    display: flex;
+    flex-direction: row;
+}
+.Profile{
+    margin:0 30px;
+    display: block;
+    min-width: 200px;
+    max-width: 340px;
+}

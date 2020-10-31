@@ -1,0 +1,53 @@
+<div class="myContainer">
+  <h2>Add new news</h2>
+  <form #myForm="ngForm" (ngSubmit)="add()">
+    <div class="input-group mb-3">
+      <input [(ngModel)]="newsModel.title"  type="text" name="Title" class="form-control" placeholder="Title">
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <span class="fas fa-envelope"></span>
+        </div>
+      </div>
+    </div>
+    <div class="input-group marginBottom">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Description</span>
+      </div>
+      <textarea [(ngModel)]="newsModel.description" name="Description"  class="form-control" rows="7" aria-label="With textarea"></textarea>
+    </div>
+    <div class="input-group mb-3">
+      <input [(ngModel)]="newsModel.image"  type="text" name="Image" class="form-control" placeholder="ImageUrl">
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <span class="fas fa-lock"></span>
+        </div>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <input [(ngModel)]="newsModel.datePost"  type="date" name="Date" class="form-control">
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <span class="fas fa-lock"></span>
+        </div>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <select (change)="setCategori(this.$event)"  class="custom-select" id="Categorie">
+        <option selected>Choose...</option>
+        <option  *ngFor="let item of categorieModel">{{item.name}}</option>
+      
+      </select>
+      <div class="input-group-append">
+        <label class="input-group-text" for="inputGroupSelect02">Categories</label>
+      </div>
+    </div>
+    <div class="classCenter myContainer">
+
+
+      <!-- /.col -->
+
+      <button type="submit" class="btn btn-primary btn-block">Add news</button>
+
+    </div>
+  </form>
+</div>

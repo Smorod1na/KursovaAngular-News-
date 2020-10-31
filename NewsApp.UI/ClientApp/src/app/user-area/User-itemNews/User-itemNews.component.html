@@ -1,0 +1,103 @@
+<section class="content">
+  <div class="card card-solid">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <div class="col-12">
+            <img src="{{model.image}}" class="product-image" width="510" alt="Product Image">
+          </div>
+
+        </div>
+        <div class="col-12 col-sm-6">
+          <h3 class="my-3">{{model.title}}</h3>
+          <p>Author:{{model.managerId}}</p>
+
+          <hr>
+          <!-- <h4>Available Colors</h4>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-default text-center active">
+              <input type="radio" name="color_option" id="color_option1" autocomplete="off" checked="">
+              Green
+              <br>
+              <i class="fas fa-circle fa-2x text-green"></i>
+            </label>
+            <label class="btn btn-default text-center">
+              <input type="radio" name="color_option" id="color_option2" autocomplete="off">
+              Blue
+              <br>
+              <i class="fas fa-circle fa-2x text-blue"></i>
+            </label>
+            <label class="btn btn-default text-center">
+              <input type="radio" name="color_option" id="color_option3" autocomplete="off">
+              Purple
+              <br>
+              <i class="fas fa-circle fa-2x text-purple"></i>
+            </label>
+            <label class="btn btn-default text-center">
+              <input type="radio" name="color_option" id="color_option4" autocomplete="off">
+              Red
+              <br>
+              <i class="fas fa-circle fa-2x text-red"></i>
+            </label>
+            <label class="btn btn-default text-center">
+              <input type="radio" name="color_option" id="color_option5" autocomplete="off">
+              Orange
+              <br>
+              <i class="fas fa-circle fa-2x text-orange"></i>
+            </label>
+          </div> -->
+          <form #myForm="ngForm" (ngSubmit)="addComment()">
+
+            <div class="input-group marginBottom">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Comments</span>
+              </div>
+              <textarea [(ngModel)]="comment" name="Description" class="form-control" rows="2" aria-label="With textarea"></textarea>
+            </div>
+
+            <div class="mt-4">
+              <button type="submit" class="btn btn-primary btn-lg btn-flat">
+                Add comment
+              </button>
+
+              <div class="btn btn-default btn-lg btn-flat">
+                Go to the favorite
+              </div>
+            </div>
+          </form>
+          <div class="mt-4 product-share">
+            <a href="#" class="text-gray">
+              <i class="fab fa-facebook-square fa-2x"></i>
+            </a>
+            <a href="#" class="text-gray">
+              <i class="fab fa-twitter-square fa-2x"></i>
+            </a>
+            <a href="#" class="text-gray">
+              <i class="fas fa-envelope-square fa-2x"></i>
+            </a>
+            <a href="#" class="text-gray">
+              <i class="fas fa-rss-square fa-2x"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <div class="row mt-4">
+        <nav class="w-100">
+          <div class="nav nav-tabs" id="product-tab" role="tablist">
+            <a class="nav-item nav-link active" (click)="changeValue('description')">
+              Description</a>
+            <a class="nav-item nav-link" (click)="changeValue('comments')">Comments</a>
+          </div>
+        </nav>
+        <div *ngIf="value==true" class="tab-content p-3" id="nav-tabContent">
+          <app-newsDescription [model]="model.description"></app-newsDescription>
+        </div>
+        <div *ngIf="value==false" class="tab-content p-3" id="nav-tabContent">
+          <app-newsComments></app-newsComments>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
