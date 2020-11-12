@@ -1,0 +1,9 @@
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\bin\Debug\netcoreapp3.1\NewsApp.DTO.deps.json
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\bin\Debug\netcoreapp3.1\NewsApp.DTO.dll
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\bin\Debug\netcoreapp3.1\NewsApp.DTO.pdb
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\obj\Debug\netcoreapp3.1\NewsApp.DTO.csprojAssemblyReference.cache
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\obj\Debug\netcoreapp3.1\NewsApp.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\obj\Debug\netcoreapp3.1\NewsApp.DTO.AssemblyInfoInputs.cache
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\obj\Debug\netcoreapp3.1\NewsApp.DTO.AssemblyInfo.cs
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\obj\Debug\netcoreapp3.1\NewsApp.DTO.dll
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.DTO\obj\Debug\netcoreapp3.1\NewsApp.DTO.pdb

@@ -11,11 +11,11 @@ namespace NewsApp.DAL.Entity
         [Key]
         public string Id { get; set; }
         [Required]
-        public string NewsId { get; set; }
-        [Required]
         public bool IsFavorite { get; set; }
-        [ForeignKey("UserAdditional")]
-        public string UserAdditionalId { get; set; }
-        public virtual UserAdditional UserAdditional { get; set; }
+        [Required]
+        public string UserEmail { get; set; }
+        [ForeignKey("News")]
+        public string NewsId { get; set; }
+        public virtual News News { get; set; }
     }
 }

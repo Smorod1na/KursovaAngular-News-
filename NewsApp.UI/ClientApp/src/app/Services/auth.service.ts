@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ApiResponse } from '../Models/api.responce';
 import { SignInModel } from '../Models/sign-in.model';
 import { SignUpModel } from '../Models/sign-up..model';
+import jwt_decode from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -34,16 +35,29 @@ export class AuthService {
   }
 
   isAdmin() {
-    let role = localStorage.getItem('role');
-    if (role == "Admin")
+    let decode = jwt_decode(localStorage.getItem('token'))
+    if (decode.roles == "Admin")
       return true;
     else
-      return false
+      return false;
   }
-
   isLoggedIn() {
     let token = localStorage.getItem('token');
-    if (token != null)
+    if (token !=null)
+      return true;
+    else
+      return false;
+  }
+  isUserLoggedIn() {
+    let decode = jwt_decode(localStorage.getItem('token'))
+    if (decode.roles == "User")
+      return true;
+    else
+      return false;
+  }
+  isManagerLoggedIn() {
+    let decode = jwt_decode(localStorage.getItem('token'))
+    if (decode.roles == "Manager")
       return true;
     else
       return false;

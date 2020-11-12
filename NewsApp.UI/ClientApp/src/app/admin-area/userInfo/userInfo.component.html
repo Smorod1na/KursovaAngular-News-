@@ -1,0 +1,40 @@
+<div nz-row>
+  <div nz-col [nzSpan]="14" [nzPush]="10">
+    <h2 nz-typography class="text-center"> {{model.fullName}}</h2>
+    <div class="first">
+      <p>Date register:</p>
+      <h4 nz-typography class="text-center"> {{model.dataRegister}}</h4>
+    </div>
+    <div class="first">
+      <p>User role:</p>
+      <h3 nz-typography class="text-center"> {{model.userRole}}</h3>
+    </div>
+    <div *ngIf="model.userRole=='Manager'" class="first">
+      <p>Count news:</p>
+      <h3 nz-typography class="text-center"> {{model.publishCount}}</h3>
+    </div>
+    <div class="first">
+      <p>Address:</p>
+      <h4 nz-typography class="text-center"> {{model.address}}</h4>
+    </div>
+    <div class="second">
+      <button class="btn btn-success btn-lg myButton" (click)="changeRole()">Change user role</button>
+      <button class="btn btn-success btn-lg myButton" (click)="deleteUser()">Delete</button>
+    </div>
+    <div *ngIf="isChangeRole==true">
+      <div *ngIf="model.userRole=='Manager'"><h5>Change role to User?</h5>
+        <button class="btn btn-success btn-lg myButton" (click)="saveChangeRole('User')">Save Change</button>
+
+      </div>
+      <div *ngIf="model.userRole=='User'"><h5>Change role to Manager?</h5>
+        <button class="btn btn-success btn-lg myButton" (click)="saveChangeRole('Manager')">Save Change</button>
+      </div>
+
+
+    </div>
+  </div>
+  <div nz-col [nzSpan]="10" [nzPull]="14">
+
+    <img alt="example" class="profile-user-img img-fluid divImage" src="{{model.image}}" />
+  </div>
+</div>

@@ -16,6 +16,12 @@ namespace NewsApp.DAL.Repository.Implement
             _context = context;
             _set = _context.Set<TEntity>();
         }
+
+        public void addFavorite(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Create(TEntity entity)
         {
             _context.Add(entity);
@@ -24,12 +30,26 @@ namespace NewsApp.DAL.Repository.Implement
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Remove(entity);
+            _context.SaveChanges();
         }
 
         public IEnumerable<TEntity> GetAll()
         {
             return _set.AsEnumerable();
+        }
+
+        public TEntity getEntity(TEntity entity)
+        {
+            return entity;
+        }
+
+        public void setFavorite(TEntity entity)
+        {
+           
+                _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
+
         }
 
         public void Update(TEntity entity)

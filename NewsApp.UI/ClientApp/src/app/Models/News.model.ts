@@ -15,10 +15,11 @@ export class NewsModel{
     public  categoriId:string="";
     public  categoriName:string="";
     
+    public isBlocked:boolean=false
     isValid():boolean{
-        if(this.title!=""&&this.description!=""&&
-        this.datePost!=""&&this.image!=""&&
-        this.categoriId!=""
+        if(this.title!=""&&this.description!=""
+        &&this.image!=""&&
+        this.categoriName!=""
         )
         return true;
         else

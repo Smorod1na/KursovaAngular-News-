@@ -1,0 +1,28 @@
+    <!-- <div class="card classHeight" style="width: 18rem;">
+      <img src="{{currentNews.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{currentNews.title}}</h5>
+        <div class="text-center">
+        <p class="card-text">DatePost: {{currentNews.datePost}}</p>
+        <a [routerLink]="['/manager-panel/',(currentNews.title)]"  class="btn btn-primary">View</a>
+      </div>
+      </div>
+    </div> -->
+
+
+
+    <div class="Card">
+      <img src="{{currentNews.image}} " class="profile-user-img img-fluid divImage">
+      <div class="divTitle">
+        <h4>{{currentNews.title}}</h4>
+      </div>
+      <div class="divAuthor">
+        <h6>DatePost:</h6>
+        <h5>{{currentNews.datePost}}</h5>
+      </div>
+      <button *ngIf="currentNews.isBlocked==false" [routerLink]="['/manager-panel/',(currentNews.title)]" type="button"
+        class="btn btn-outline-danger">View</button>
+      <div *ngIf="currentNews.isBlocked==true" class="divBlock">
+        <h3>BLOCKED</h3>
+      </div>
+    </div>

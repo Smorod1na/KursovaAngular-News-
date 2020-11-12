@@ -16,6 +16,8 @@ namespace NewsApp.DTO.Models
        
         [Required(ErrorMessage = "Not text")]
         public string Phone { get; set; }
+        [Required(ErrorMessage = "Not text")]
+        public string FullName { get; set; }
         //[Required(ErrorMessage = "Not text")]
 
         //public string Image { get; set; }

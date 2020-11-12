@@ -9,14 +9,10 @@ import { NewsService } from '../Services/News.service';
 })
 export class ManagerAreaComponent implements OnInit {
 
-  constructor(private newsService:NewsService) { }
-  newsModel:NewsModel[];
+  constructor() { }
 
   ngOnInit() {
-    this.newsService.getAllNews().subscribe(data=>{
-      console.log(data)
-      this.newsModel=data
-    })
+    
   }
 
 }

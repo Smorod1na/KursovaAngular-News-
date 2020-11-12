@@ -24,8 +24,15 @@ namespace NewsApp.DAL.Entity
         public string DatePost { get; set; }
         [ForeignKey("Categori")]
         public string CategoriId { get; set; }
+        [Required]
+        public string CategoriName { get; set; }
+
+        public bool IsBlocked { get; set; }
         public virtual Categori Categori { get; set; }
 
         public virtual ICollection<Comments> NewsComments { get; set; }
+
+        public virtual ICollection<UserIsFavorite> UserIsFavorites { get; set; }
+
     }
 }

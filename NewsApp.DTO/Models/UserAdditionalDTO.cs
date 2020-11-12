@@ -9,6 +9,8 @@ namespace NewsApp.DTO.Models
         public string Address { get; set; }
         public string Image { get; set; }
         public string FullName { get; set; }
-
+        public string DataRegister { get; set; }
+        public string UserRole { get; set; }
+        public string PublishCount { get; set; }
     }
 }

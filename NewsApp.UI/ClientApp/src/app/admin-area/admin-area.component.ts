@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserModel } from '../Models/User.model';
+import { AuthService } from '../Services/auth.service';
+import { UserService } from '../Services/User.service';
 
 @Component({
   selector: 'app-admin-area',
@@ -7,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminAreaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private authservice:AuthService
+  ) { }
   isCollapsed = false;
-
+  theme = true
+  allUsers:UserModel[]=[]
   ngOnInit() {
+    this.userService.getAllUser().subscribe(data=>{
+      this.allUsers=data
+    })
+  }
+  logOut() {
+    this.authservice.LogOut();
   }
 
 }

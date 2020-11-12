@@ -18,7 +18,7 @@ export class EditUserProfileComponent implements OnInit {
 
   edit() {
     this.userService.editUser(this.userModel, this.Id).subscribe(data=>{
-console.log(data)
+      this.userService.setUserInfo(this.userModel)
     },error=>{
       console.log(error)
     })

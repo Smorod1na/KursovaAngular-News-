@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { NewsModel } from 'src/app/Models/News.model';
 
 @Component({
@@ -7,10 +7,13 @@ import { NewsModel } from 'src/app/Models/News.model';
   styleUrls: ['./UserNewsItem.component.css']
 })
 export class UserNewsItemComponent implements OnInit {
-@Input()currentNews:NewsModel
+  @Input() currentNews: NewsModel
   constructor() { }
+  refreshList = new EventEmitter<NewsModel>()
 
   ngOnInit() {
+    this.refreshList.emit(this.currentNews)
+
   }
 
 }

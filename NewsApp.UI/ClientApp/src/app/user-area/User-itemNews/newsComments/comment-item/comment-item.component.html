@@ -1,0 +1,21 @@
+<form #myForm="ngForm" (ngSubmit)="delete()">
+  <div>
+    <div class="myContainer">
+      <div>
+        <h5>
+          {{currenComment.userName}}
+        </h5>
+        <h6 class="text-black-50">
+          Date: {{currenComment.datePost}}
+        </h6>
+      </div>
+      <div class="divButton">
+        <button *ngIf="userModel.fullName==currenComment.userName" type="submit" class="btn btn-warning">Delete</button>
+      </div>
+    </div>
+<div class="boxShadow">
+    <p>{{currenComment.text}}</p>
+  </div>
+    <hr>
+  </div>
+</form>

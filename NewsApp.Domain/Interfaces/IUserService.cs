@@ -8,5 +8,7 @@ namespace NewsApp.Domain.Interfaces
    public interface IUserService
     {
         void editUser(UserAdditional user);
+        void deleteUser(UserAdditional user);
+
     }
 }

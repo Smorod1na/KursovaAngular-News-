@@ -90,6 +90,11 @@ namespace NewsApp.UI
             services.AddScoped<IGenericRepository<UserAdditional>, EFRepository<UserAdditional>>();
             services.AddScoped<IUserService, UserService>();
 
+            services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<IGenericRepository<Comments>, EFRepository<Comments>>();
+
+            services.AddScoped<IGenericRepository<UserIsFavorite>, EFRepository<UserIsFavorite>>();
+
             services.AddMvc();
 
             services.AddAutoMapper(typeof(Startup));
@@ -127,6 +132,7 @@ namespace NewsApp.UI
             {
                 app.UseSpaStaticFiles();
             }
+            app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -136,7 +142,6 @@ namespace NewsApp.UI
                 app.UseSpaStaticFiles();
             }
 
-            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {

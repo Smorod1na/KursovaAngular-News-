@@ -1,4 +1,4 @@
-<div class="myContainer">
+<div class="myContainer container">
   <h2>Add new news</h2>
   <form #myForm="ngForm" (ngSubmit)="add()">
     <div class="input-group mb-3">
@@ -23,14 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="input-group mb-3">
-      <input [(ngModel)]="newsModel.datePost"  type="date" name="Date" class="form-control">
-      <div class="input-group-append">
-        <div class="input-group-text">
-          <span class="fas fa-lock"></span>
-        </div>
-      </div>
-    </div>
+
     <div class="input-group mb-3">
       <select (change)="setCategori(this.$event)"  class="custom-select" id="Categorie">
         <option selected>Choose...</option>

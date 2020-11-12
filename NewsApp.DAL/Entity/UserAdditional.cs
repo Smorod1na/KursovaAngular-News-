@@ -15,7 +15,8 @@ namespace NewsApp.DAL.Entity
         public virtual User User { get; set; }
 
         public string FullName { get; set; }
-
-        public virtual ICollection<UserIsFavorite> UserIsFavorites { get; set; }
+        public string DataRegister { get; set; }
+        public string UserRole { get; set; }
+        public string PublishCount { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace NewsApp.DTO.Models
 {
    public class NewsDTO
     {
+
         [Required]
         public string ManagerId { get; set; }
         [Required]
@@ -19,8 +20,10 @@ namespace NewsApp.DTO.Models
         public string Image { get; set; }
         [Required]
         public string DatePost { get; set; }
-        [Required]
+        //[Required]
         public string CategoriId { get; set; }
         public string CategoriName { get; set; }
+        public bool IsBlocked { get; set; }
+
     }
 }

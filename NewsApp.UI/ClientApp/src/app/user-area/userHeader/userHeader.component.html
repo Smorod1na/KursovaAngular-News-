@@ -1,19 +1,29 @@
-<nav class="main-header navbar navbar-expand bg-dark">
-  <!-- Left navbar links -->
- 
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/user-panel/']" (click)="testclick('null')">User-panel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]="{ show: isExpanded }">
+        <form class="form-inline my-2 my-lg-0">
 
-  <!-- SEARCH FORM -->
-  <form class="form-inline ml-3">
-    <div class="input-group input-group-sm">
-      <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-      <div class="input-group-append">
-        <button class="btn btn-navbar bg-light" type="submit">
-          <i class="fas fa-search text-dark"></i>
-        </button>
+          <ul class="navbar-nav flex-grow">
+            <li>
+              <input [(ngModel)]="searchtext" class="form-control mr-sm-2" type="text" name="searchtext"
+                placeholder="Search" aria-label="Search">
+              <button [routerLink]="['/user-panel/search/',(searchtext)]"
+                class="btn btn-outline-success my-2 mr-2 my-sm-0" type="submit">Search</button>
+            </li>
+            <li (click)="logOut()" [routerLinkActive]="['link-active']">
+              <button class="btn btn-outline-success my-2 mr-2 my-sm-0" type="submit">LogOut</button>
+
+            </li>
+          </ul>
+        </form>
+
       </div>
     </div>
-  </form>
-
-  <!-- Right navbar links -->
- 
-</nav>
+  </nav>
+</header>

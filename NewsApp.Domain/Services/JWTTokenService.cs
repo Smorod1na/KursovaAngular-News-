@@ -35,6 +35,7 @@ namespace NewsApp.Domain.Services
             foreach(var role in roles)
             {
                 claims.Add(new Claim("roles", role));
+                //claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
             string jwtTokenSecretKey = _configuration.GetValue<string>("SecretPhrase");

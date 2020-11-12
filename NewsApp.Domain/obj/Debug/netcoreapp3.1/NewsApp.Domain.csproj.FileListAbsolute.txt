@@ -1,0 +1,12 @@
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\bin\Debug\netcoreapp3.1\NewsApp.Domain.deps.json
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\bin\Debug\netcoreapp3.1\NewsApp.Domain.dll
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\bin\Debug\netcoreapp3.1\NewsApp.Domain.pdb
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\bin\Debug\netcoreapp3.1\NewsApp.DAL.dll
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\bin\Debug\netcoreapp3.1\NewsApp.DAL.pdb
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\obj\Debug\netcoreapp3.1\NewsApp.Domain.csprojAssemblyReference.cache
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\obj\Debug\netcoreapp3.1\NewsApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\obj\Debug\netcoreapp3.1\NewsApp.Domain.AssemblyInfoInputs.cache
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\obj\Debug\netcoreapp3.1\NewsApp.Domain.AssemblyInfo.cs
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\obj\Debug\netcoreapp3.1\NewsApp.Domain.csproj.CopyComplete
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\obj\Debug\netcoreapp3.1\NewsApp.Domain.dll
+C:\Users\Саня\source\repos\NewsApp.UI\NewsApp.Domain\obj\Debug\netcoreapp3.1\NewsApp.Domain.pdb

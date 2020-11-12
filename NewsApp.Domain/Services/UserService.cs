@@ -14,6 +14,12 @@ namespace NewsApp.Domain.Services
         {
             _userRepo = userRepo;
         }
+
+        public void deleteUser(UserAdditional user)
+        {
+            _userRepo.Delete(user);
+        }
+
         public void editUser(UserAdditional user)
         {
             _userRepo.Update(user);

@@ -9,6 +9,14 @@
 
       <form #myForm="ngForm" (ngSubmit)="register()" >
         <div class="input-group mb-3">
+          <input type="text" [(ngModel)]="model.fullName" name="fullName" class="form-control" placeholder="FullName">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
           <input type="text" [(ngModel)]="model.Phone" name="Phone" class="form-control" placeholder="Phone">
           <div class="input-group-append">
             <div class="input-group-text">
@@ -58,17 +66,7 @@
         </div>
       </form>
 
-      <div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
-        </a>
-      </div>
+  
 
       <a [routerLink]="['/sign-in']" class="text-center">I already have a membership</a>
     </div>

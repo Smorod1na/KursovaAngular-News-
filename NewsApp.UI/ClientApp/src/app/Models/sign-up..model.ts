@@ -4,14 +4,14 @@ export class SignUpModel{
  
     public  Password:string="";
 
-    // public FullName:string="";
+    public fullName:string="";
 
     public  Phone:string="";
 
     public Address:string="";
 
     isValid():boolean{
-        if(this.Email!=""&&
+        if(this.Email!=""&&this.fullName!=""&&
             this.Address!=""&&this.Phone!=""&&
             this.Password!="")
             return true;

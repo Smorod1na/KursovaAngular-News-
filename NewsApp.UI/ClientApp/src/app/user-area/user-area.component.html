@@ -1,5 +1,16 @@
-<app-userHeader></app-userHeader>
-    <div class="wrapper myContainer">
- <app-userProfil class="Profile"></app-userProfil>
-      <router-outlet class="content-wrapper"></router-outlet>
-    </div>
+<div class="wrapper">
+  <div class="content-wrapper">
+    <div class="content ">
+      <app-userHeader></app-userHeader>
+
+        <div class="row ">
+          <div class="col-md-3">
+          <app-userProfil></app-userProfil>
+        </div>
+        <div class="col-md-8">
+          <router-outlet></router-outlet>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>

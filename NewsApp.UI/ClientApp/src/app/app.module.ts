@@ -18,7 +18,6 @@ import { UserAreaComponent } from './user-area/user-area.component';
 import { ManagerAreaComponent } from './manager-area/manager-area.component';
 //Manager
 import{AddNewsComponent} from './manager-area/addNews/addNews.component'
-import{NewsItemComponent} from './manager-area/news-item/news-item.component'
 //User
 import{NewsListComponent}from './user-area/news-list/news-list.component'
 import{UserNewsItemComponent} from './user-area/news-list/UserNewsItem/UserNewsItem.component'
@@ -32,9 +31,18 @@ import {UserHeaderComponent} from './user-area/userHeader/userHeader.component'
 import{EditUserProfileComponent} from './user-area/editUserProfile/editUserProfile.component'
 
 import { NgZorroAntdModule } from './ng-zorro.module';
+import { NZ_ICONS } from 'ng-zorro-antd/icon'
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+import * as AllIcons from '@ant-design/icons-angular/icons';
+import { IconDefinition } from '@ant-design/icons-angular';
 
+const antDesignIcons = AllIcons as {
+  [key: string]: IconDefinition;
+};
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
 import { from } from 'rxjs';
+import { IconsProviderModule } from './icons-provider.module';
 const configNotifier: NotifierOptions = {
   position: {
     horizontal: {
@@ -45,8 +53,26 @@ const configNotifier: NotifierOptions = {
     }
   }
 }
+
+import{UserInfoComponent} from './admin-area/userInfo/userInfo.component'
+import{AdminProfileComponent} from './admin-area/adminProfile/adminProfile.component'
+
+import {ManagerNewsListComponent} from './manager-area/managerNews-list/managerNews-list.component'
+import{ManagerProfileComponent} from './manager-area/managerProfile/managerProfile.component'
+import {ManagerNewsItemComponent} from './manager-area/managerNews-list/managerNews-item/managerNews-item.component'
+import { Page404Component } from './page404/page404.component';
+import{CommentItemComponent} from './user-area/User-itemNews/newsComments/comment-item/comment-item.component'
+
+import{ManagerItemComponent} from './manager-area/managerNews-list/managerNews-item/manager-item/manager-item.component'
+
+import{ManagerHeaderComponent} from './manager-area/manager-header/manager-header.component'
+
+import{SearchNewsListComponent} from './manager-area/searchNews-list/searchNews-list.component'
+import{UserSearchListComponent} from './user-area/userSearch-list/userSearch-list.component'
+
+import{EditManagerProfileComponent} from './manager-area/editManagerProfile/editManagerProfile.component'
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -56,7 +82,6 @@ const configNotifier: NotifierOptions = {
       UserAreaComponent,
       ManagerAreaComponent,
       AddNewsComponent,
-      NewsItemComponent,
       NewsListComponent,
       UserNewsItemComponent,
       UserItemNewsComponent,
@@ -64,7 +89,19 @@ const configNotifier: NotifierOptions = {
       NewsCommentsComponent,
       UserProfilComponent,
       UserHeaderComponent,
-      EditUserProfileComponent
+      EditUserProfileComponent,
+      UserInfoComponent,
+      AdminProfileComponent,
+      ManagerProfileComponent,
+      ManagerNewsListComponent,
+      ManagerNewsItemComponent,
+      CommentItemComponent,
+      ManagerItemComponent,
+      ManagerHeaderComponent,
+      SearchNewsListComponent,
+      UserSearchListComponent,
+      EditManagerProfileComponent,
+      Page404Component
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -72,8 +109,12 @@ const configNotifier: NotifierOptions = {
     FormsModule,
     AppRoutingModule,
     NotifierModule.withConfig(configNotifier),
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    IconsProviderModule
   ],
+  providers: [
+    { provide: NZ_ICONS, useValue: icons }  
+],
   bootstrap:  
   [AppComponent]
 })

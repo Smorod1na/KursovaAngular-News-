@@ -1,0 +1,29 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/manager-panel/']">Manager-panel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]="{ show: isExpanded }">
+        <form class="form-inline my-2 my-lg-0">
+
+          <ul class="navbar-nav flex-grow">
+            <li>
+              <input [(ngModel)]="searchtest" class="form-control mr-sm-2" name="searchtest" type="text" placeholder="Search" >
+              <button class="btn btn-outline-danger my-2 mr-2 my-sm-0" 
+              [routerLink]="['/manager-panel/search/',(searchtest)]"
+               type="submit">Search</button>
+            </li>
+            <li (click)="logOut()"  [routerLinkActive]="['link-active']">
+              <button class="btn btn-outline-danger my-2 mr-2 my-sm-0" type="submit">LogOut</button>
+
+            </li>
+          </ul>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+</header>

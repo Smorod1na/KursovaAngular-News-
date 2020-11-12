@@ -169,6 +169,10 @@ namespace NewsApp.UI.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("DatePost")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NewsId")
                         .HasColumnType("nvarchar(450)");
 
@@ -195,6 +199,10 @@ namespace NewsApp.UI.Migrations
                     b.Property<string>("CategoriId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("CategoriName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("DatePost")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -206,6 +214,9 @@ namespace NewsApp.UI.Migrations
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsBlocked")
+                        .HasColumnType("bit");
 
                     b.Property<string>("ManagerId")
                         .IsRequired()
@@ -300,10 +311,19 @@ namespace NewsApp.UI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DataRegister")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PublishCount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserRole")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -320,15 +340,15 @@ namespace NewsApp.UI.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("NewsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserAdditionalId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserAdditionalId");
+                    b.HasIndex("NewsId");
 
                     b.ToTable("UserIsFavorites");
                 });
@@ -409,9 +429,9 @@ namespace NewsApp.UI.Migrations
 
             modelBuilder.Entity("NewsApp.DAL.Entity.UserIsFavorite", b =>
                 {
-                    b.HasOne("NewsApp.DAL.Entity.UserAdditional", "UserAdditional")
+                    b.HasOne("NewsApp.DAL.Entity.News", "News")
                         .WithMany("UserIsFavorites")
-                        .HasForeignKey("UserAdditionalId");
+                        .HasForeignKey("NewsId");
                 });
 #pragma warning restore 612, 618
         }

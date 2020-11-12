@@ -15,6 +15,8 @@ namespace NewsApp.DAL.Entity
         public string Text { get; set; }
         [Required]
         public string UserName { get; set; }
+        [Required]
+        public string DatePost { get; set; }
         [ForeignKey("News")]
         public string NewsId { get; set; }
         public virtual News News { get; set; }

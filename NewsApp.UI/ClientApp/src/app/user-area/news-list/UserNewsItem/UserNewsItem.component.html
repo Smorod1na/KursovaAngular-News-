@@ -1,4 +1,4 @@
-
+<!-- 
   <div class="card bg-light">
     <div class="card-header text-muted border-bottom-0">
       {{currentNews.categoriName}}
@@ -20,12 +20,29 @@
     </div>
     <div class="card-footer">
       <div class="text-right">
-        <a href="#" class="btn btn-sm bg-teal">
-          <i class="fas fa-comments"></i>
-        </a>
-        <a [routerLink]="['/user-panel',(currentNews.title)]" class="btn btn-sm btn-primary">
+ 
+        <a *ngIf="currentNews.isBlocked==false"  class="btn btn-sm btn-primary">
           <i class="fas fa-user"></i> View News
       </a>
+      <a *ngIf="currentNews.isBlocked==true"class="btn btn-sm btn-danger">
+        <i class="fas fa-user"></i> Nes is Blocked
+    </a>
       </div>
     </div>
+  </div> -->
+
+<div class="Card">
+  <img src="{{currentNews.image}} " class="profile-user-img img-fluid divImage">
+  <div class="divTitle">
+    <h4>{{currentNews.title}}</h4>
   </div>
+  <div class="divAuthor">
+    <h6>Author:</h6>
+    <h5>{{currentNews.managerName}}</h5>
+  </div>
+  <button *ngIf="currentNews.isBlocked==false" [routerLink]="['/user-panel/',(currentNews.title)]"
+  type="button" class="btn btn-outline-success">View</button>
+  <div *ngIf="currentNews.isBlocked==true" class="divBlock">
+    <h3>BLOCKED</h3>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<section class="content">
+  <div class="card card-solid">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-6  col-sm-12">
+          <div class="col-12">
+            <img src="{{model.image}}" class="profile-user-img img-fluid divImage" width="510" alt="Product Image">
+          </div>
+
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 col-sm-12">
+          <h3 class="my-3">{{model.title}}</h3>
+          <p>DatePost: {{model.datePost}}</p>
+
+          <hr>
+       
+          <form #myForm="ngForm" (ngSubmit)="deleteNews()">
+
+        
+
+            <div class="mt-4">
+              <button type="submit" class="btn btn-primary btn-lg btn-flat">
+               Delete News
+              </button>
+
+           
+            </div>
+          </form>
+       
+        </div>
+      </div>
+      <div class="row mt-4">
+       
+        <div  class="container w-100">
+          <app-newsDescription [model]="model.description"></app-newsDescription>
+        </div>
+        <div class="container w-100">
+          <h4>Comments:</h4>
+          <app-newsComments [title]="title"></app-newsComments>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

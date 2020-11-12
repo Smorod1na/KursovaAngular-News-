@@ -58,12 +58,14 @@ namespace NewsApp.UI.Controllers
                 {
                     Address = model.Address,
                     Image = "default.jpg",
-                    //FullName = model.FullName,
+                    DataRegister = DateTime.Now.ToShortDateString(),
+                    PublishCount="0",
+                    FullName = model.FullName,
                     Id = user.Id
                 };
 
                 IdentityResult result = await _userManager.CreateAsync(user, model.Password);
-
+                
                 if (!result.Succeeded)
                 {
                     return new ResultErrorDTO
@@ -73,10 +75,10 @@ namespace NewsApp.UI.Controllers
                         Errors = CustomValidator.GetErrorByIdentityResult(result)
                     };
                 }
-
                 else
                 {
-                    result = _userManager.AddToRoleAsync(user, "Manager").Result;
+                    result = _userManager.AddToRoleAsync(user, "User").Result;
+                    userProFile.UserRole = "User";
                     _eFContext.UserAdditional.Add(userProFile);
 
                     _eFContext.SaveChanges();

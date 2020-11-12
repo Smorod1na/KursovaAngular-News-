@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NewsApp.Domain.Interfaces;
@@ -21,6 +22,7 @@ namespace NewsApp.UI.Controllers
             _categoriService = categoriService;
             _mapper = mapper;
         }
+        //[Authorize(Roles ="Manager")]
         [HttpGet]
         public List<CategoriDTO> getAllCategories()
         {

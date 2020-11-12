@@ -1,0 +1,25 @@
+<div class="card card-primary card-outline">
+  <div class="card-body box-profile">
+    <div class="text-center">
+      <img class="profile-user-img img-fluid img-circle" src="{{userModel.image}}" alt="User profile picture">
+    </div>
+
+    <h3 class="profile-username text-center">{{userModel.fullName}}</h3>
+
+    <h5 class="profile-username text-center">{{userModel.address}}</h5>
+    <hr>
+
+    <a class="btn btn-primary btn-lg btn-block marginButton text-white" [routerLink]="['/manager-panel/edit']"><b>Edit
+        profil</b></a>
+    <a class="btn btn-danger btn-block marginButton" [routerLink]="['/manager-panel/add-news']"><b>Add
+        news</b></a>
+    <!-- <a class="btn btn-danger btn-block marginButton" [routerLink]="['/manager-panel/add-categorie']"><b>Add
+        categorie</b></a> -->
+  </div>
+
+
+
+
+
+
+</div>
